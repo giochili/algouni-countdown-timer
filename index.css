@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(
+    to bottom,
+    #1d1e28 0%,
+    #261c2d 95%,
+    #261a2d 100%
+  );
+  font-family: "Red Hat Text", sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+
+  justify-content: center;
+}
+.main-container {
+  background-image: url("./images/bg-stars.svg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Red Hat Text", sans-serif;
+  width: 375px;
+  height: 100%;
+}
+.header {
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 6.14px;
+  text-align: center;
+  color: #fff;
+  width: 27ch;
+  padding: 142px 24px 0 24px;
+  margin-bottom: 54px;
+}
+.footer {
+  width: 375px;
+  background-image: url("./images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: -700px;
+  background-size: cover;
+  height: 168px;
+  position: relative;
+  margin-top: 163px;
+}
+.footer-flex {
+  display: grid;
+  position: absolute;
+  left: 120px;
+  top: 96px;
+  grid-template-columns: repeat(3, 24px);
+  align-items: center;
+  justify-content: center;
+  column-gap: 32px;
+}
+.mein-section {
+  color: #fb5e84;
+  font-size: 36px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.97;
+  letter-spacing: -1.08px;
+  font-family: "Red Hat Text", sans-serif;
+  text-align: center;
+}
+
+.flip-card {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+}
+.top {
+  border-radius: 4px 4px 0px 0px;
+  opacity: 0.6;
+  background-color: #343650;
+  border-bottom: 0.5px solid #000;
+}
+.bottom {
+  border-radius: 0 0 4px 4px;
+  background-color: #343650;
+  display: flex;
+  align-items: flex-end;
+}
+.top,
+.bottom {
+  height: 1.83rem;
+  line-height: 1;
+  padding: 0.31em;
+  overflow: hidden;
+}
+.flip-card.flip::before {
+  content: "08";
+  height: 50%;
+  padding-bottom: 20px;
+  opacity: 0.6;
+  top: -6px;
+  position: absolute;
+  width: 100%;
+  animation: flip-down 1000ms ease-in;
+  transform-origin: bottom;
+}
+@keyframes flip-down {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+.flip-card.flip::after {
+  content: "08";
+  height: 50%;
+  color: green;
+  background-color: blue;
+  padding-bottom: 20px;
+  opacity: 0.6;
+  bottom: -6px;
+  position: absolute;
+  width: 100%;
+  animation: flip-bottom 1000ms ease-in;
+  transform-origin: top;
+}
+@keyframes flip-bottom {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
